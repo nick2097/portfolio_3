@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import {Main} from "./layout/sections/main/Main";
 import {Header} from "./layout/header/Header";
+import {Skills} from "./layout/sections/skills/Skills";
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
         <div className="App">
           <Header/>
             <Main/>
+            <Skills/>
         </div>
     );
 }

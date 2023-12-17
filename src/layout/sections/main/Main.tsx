@@ -4,27 +4,59 @@ import photo from '../../../assets/images/sample.jpg';
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Theme} from "../../../styles/Theme";
 import {Icon} from "../../../components/icon/Icon";
+import {Container} from "../../../components/Container";
 
 export const Main = () => {
     return (
         <StyledMain>
-            <FlexWrapper align={"center"} justify = "space-around">
-                <div>
-                    <h2>Hi👋, I’m a</h2>
-                    <h1>software developer</h1>
-                    <span>I’m John Doe, a developer dedicated to making the world a better place one line of code at a time.</span>
-                    <MainButton>Hire me</MainButton>
-                </div>
+            <Container>
+                <GridSquared>
+                    <FlexWrapper align={"center"} justify = "space-around">
+                        <div>
+                            <h2>Hi👋, I’m a</h2>
+                            <h1>software developer</h1>
+                            <span>I’m John Doe, a developer dedicated to making the world a better place one line of code at a time.</span>
+                            <MainButton>Hire me</MainButton>
+                        </div>
 
-                <Photo src={photo} alt=""/>
 
-            </FlexWrapper>
+                        <div>
+                                <IconPlus>
+                                    <Icon iconId={"plus"} width={"27"} height={"28"} viewBox={"0 0 27 28"}/>
+                                </IconPlus>
+                                <IconCube>
+                                    <Icon iconId={"cube"} width={"41"} height={"41"} viewBox={"0 0 41 41"} />
+                                </IconCube>
+
+
+                            <IconZigzags>
+                                <Icon iconId={"zigzags"} width={"42"} height={"102"} viewBox={"0 0 42 102"}/>
+                            </IconZigzags>
+
+                            <IconEllipse>
+                                <Icon iconId={"ellipse"} width={"23"} height={"23"} viewBox={"0 0 23 23"}/>
+                            </IconEllipse>
+
+
+
+
+
+                            <Photo src={photo} alt=""/>
+                        </div>
+
+
+
+                    </FlexWrapper>
+                </GridSquared>
+
+
+            </Container>
 
         </StyledMain>
     );
 };
 const StyledMain = styled.div`
-  min-height: 100vh;
+  height: 100%;
   background: ${Theme.colors.secondaryBg};
 `
 
@@ -57,4 +89,36 @@ const MainButton = styled.button`
   /* text */
   font-size: 18px;
   font-weight: 400;
+`
+const IconZigzags = styled.div`
+  position: absolute;
+  top: 30px;
+  right: 380px;
+`
+const IconEllipse = styled.div`
+position: absolute;
+  bottom: 10px;
+  right: 380px;
+`
+const IconPlus = styled.div`
+  position: absolute;
+  right: 220px;
+  top: 0;
+  
+`
+const IconCube = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+`
+const GridSquared = styled.div`
+        background-size: 10px 10px;
+          background-image:
+          linear-gradient(to right,  #FFCCCB 1px, transparent 1px),
+          linear-gradient(to bottom,  #FFCCCB 1px, transparent 1px);
+  width: 1245px;
+  height: 495px;
+  border: 1px solid black;
+  background-color: #FCFCFC;
+  position: relative;
 `
