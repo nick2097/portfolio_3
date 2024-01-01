@@ -2,9 +2,12 @@ import React from 'react';
 import styled from "styled-components";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Icon} from "../../../components/icon/Icon";
-import js from '../../../assets/images/js.png'
 import {Container} from "../../../components/Container";
 import {Theme} from "../../../styles/Theme";
+import html5 from "../../../assets/images/html5Skill.png";
+import css3 from "../../../assets/images/css3Skill.png";
+import js from "../../../assets/images/jsSkill.png";
+import bootstrap from "../../../assets/images/bootstrapSkill.png";
 
 export const Skills = () => {
     return (
@@ -13,59 +16,28 @@ export const Skills = () => {
         <Container>
             <StyledTitle>Skills</StyledTitle>
             <FlexWrapper justify={"space-between"}>
-
+                <FlexWrapper>
                     <AdditionalText>I have a vast experience in the following web technologies:</AdditionalText>
 
-                <SkillsWrapper>
+                    <SkillsWrapper>
+                        <SkillImage src={html5} alt={"html5"} />
+                        <SkillImage src={css3} alt={"css3"}/>
+                        <SkillImage src={js} alt={"javascript"}/>
+                        <SkillImage src={bootstrap} alt={"bootstrap"}/>
+                    </SkillsWrapper>
+                </FlexWrapper>
 
-                    <StyledSkill>
-                        <FlexWrapper direction={"column"} align={"center"}>
-                            <Icon iconId={"polygon"} width={"65"} height={"75"} viewBox={"0 0 65 75"}/>
-                                <Icon iconId={"html5"} width={"44"} height={"44"} viewBox={"0 0 44 44"}/>
+                <ProjectSvg>
+                    <Icon iconId={"project_completed"} width={"511"} height={"414"} viewBox={"0 0 511 414"}/>
+                </ProjectSvg>
 
-
-                            <SkillTitle>HTML5</SkillTitle>
-                        </FlexWrapper>
-                    </StyledSkill>
-                    <StyledSkill>
-                        <FlexWrapper direction={"column"} align={"center"}>
-                            <IconWrapper>
-                                <Icon iconId={"css3"} width={"53"} height={"53"} viewBox={"0 0 53 53"}/>
-                            </IconWrapper>
-                            <SkillTitle>CSS3</SkillTitle>
-                        </FlexWrapper>
-                    </StyledSkill>
-
-                    <StyledSkill>
-                        <FlexWrapper direction={"column"} align={"center"}>
-                            <IconWrapper>
-                                <SkillImage src={js} alt = "java script"/>
-                            </IconWrapper>
-                            <SkillTitle>JavaScript</SkillTitle>
-                        </FlexWrapper>
-                    </StyledSkill>
-
-                    <StyledSkill>
-                        <FlexWrapper direction={"column"} align={"center"}>
-                            <IconWrapper>
-                                <Icon iconId = {"bootstrap4"} width={"40"} height={"40"} viewBox={"0 0 40 40"}/>
-                            </IconWrapper>
-                            <SkillTitle>Bootstrap</SkillTitle>
-                        </FlexWrapper>
-                    </StyledSkill>
-
-
-
-
-
-
-                </SkillsWrapper>
-
-                <Icon iconId={"project_completed"} width={"511"} height={"414"} viewBox={"0 0 511 414"}/>
             </FlexWrapper>
 
         </Container>
-        <Icon iconId = "blob" width={"363"} height={"296"} viewBox={"0 0 363 296"}/>
+
+        <BlobBg>
+            <Icon iconId = "blob" width={"363"} height={"296"} viewBox={"0 0 363 296"}/>
+        </BlobBg>
 
     </StyledSkills>
     );
@@ -75,28 +47,37 @@ const StyledSkills = styled.div`
   height: 100%;
   background-color: ${Theme.colors.primaryBg};
   padding-top: 224px;
+  position: relative;
 `
 const StyledTitle = styled.h2`
   text-align: center;
   color: ${Theme.colors.accent_red};
+  font-family: Be Vietnam;
+  font-size: 20px;
+  font-weight: 500;
 `
 const SkillImage = styled.img`
 
 `
 const SkillsWrapper = styled.div`
-display: flex;
+  display: flex;
   align-items: center;
+  gap: 42px;
+  position: absolute;
+  top: 500px;
+  
   
 `
-const SkillTitle = styled.h3`
 
-`
-const IconWrapper = styled.div`
-  
-`
-const StyledSkill = styled.div`
-
-`
 const AdditionalText = styled.span`
 position: absolute;
+  top: 450px;
+`
+const BlobBg = styled.div`
+position: absolute;
+  top: 180px;
+  right: 100px;
+`
+const ProjectSvg = styled.div`
+ z-index: 1;
 `

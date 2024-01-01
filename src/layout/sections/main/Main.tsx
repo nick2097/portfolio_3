@@ -44,7 +44,17 @@ export const Main = () => {
                             <Photo src={photo} alt=""/>
                         </div>
 
-
+                    <LoadingCircles>
+                        <Circle></Circle>
+                        <Circle></Circle>
+                        <Circle></Circle>
+                        <Circle></Circle>
+                        <Circle></Circle>
+                        <Circle></Circle>
+                        <Circle></Circle>
+                        <Circle></Circle>
+                        <Circle></Circle>
+                    </LoadingCircles>
 
                     </FlexWrapper>
                 </GridSquared>
@@ -121,4 +131,20 @@ const GridSquared = styled.div`
   border: 1px solid black;
   background-color: #FCFCFC;
   position: relative;
+  
+`
+const Circle = styled.span`
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: ${Theme.colors.accent_red};
+`
+const LoadingCircles = styled.div`
+display: flex;
+  width: 140px;
+  gap: 12px 33px;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 5px;
+  right: -15px;
 `
